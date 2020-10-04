@@ -8,6 +8,7 @@ import {CenterText, TextBold, ButtonText, ButtonTouchable} from './styles';
 export default class Main extends Component {
   onSuccess = (e) => {
     const {navigation} = this.props;
+
     navigation.navigate('Details', e.data);
     // Linking.openURL(e.data).catch((err) =>
     //   console.error('An error occured', err),
