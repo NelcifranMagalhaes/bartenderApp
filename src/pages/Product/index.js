@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {Button} from 'react-native';
 import Background from '../../components/Background';
 import {Container, Title, List} from './styles';
 import Fruit from '../../components/Fruit';
@@ -26,6 +27,10 @@ export default function Product({route}) {
           renderItem={({item}) => <Fruit data={item} />}
         />
       </Container>
+      <Button
+        title="Enviar"
+        onPress={() => console.tron.log(products)}
+      />
     </Background>
   );
 }
