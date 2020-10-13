@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://bartenderonline.herokuapp.com/',
+  baseURL: 'https://bartenderonline.herokuapp.com/api/v1',
 });
 
 export default api;

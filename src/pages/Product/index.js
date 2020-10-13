@@ -4,6 +4,7 @@ import {Button} from 'react-native';
 import Background from '../../components/Background';
 import {Container, Title, List} from './styles';
 import Fruit from '../../components/Fruit';
+import api from '../../services/api';
 
 
 export default function Product({route, navigation}) {
@@ -19,10 +20,23 @@ export default function Product({route, navigation}) {
     loadProducts();
   }, []);
 
-  function handleSubmit() {
-    console.tron.warn(global.listOfProducts);
-    global.listOfProducts = [['table_id', products.table_number]];
+  async function sendDemand() {
+    const companyId = url.substring(
+      url.lastIndexOf('company/') + 8,
+      url.lastIndexOf('/table'),
+    );
+    // console.tron.warn(global.listOfProducts);
+    const urlPost = `company/${companyId}/create_demand`;
+    const response = await api.post(urlPost, global.listOfProducts);
+    console.tron.log(response);
 
+  }
+
+  function handleSubmit() {
+    if (global.listOfProducts.length > 1) {
+      sendDemand();
+      global.listOfProducts = [['table_id', products.table_number]];
+    }
     navigation.navigate('Home');
   }
 

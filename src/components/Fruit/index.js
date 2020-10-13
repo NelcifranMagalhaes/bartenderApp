@@ -20,10 +20,9 @@ export default function Fruit({data}) {
     if (exist == 0) {
       global.listOfProducts.push([name, countProduct]); // se nao encontrou nenhum nome igual, cria
     }
-    console.tron.log(global.listOfProducts);
   }
 
-  function onPressLess(name, countProduct) {
+  function onPressLess(name) {
     setCount((prevCount) => prevCount - 1);
     for (let i = 0; i < global.listOfProducts.length; i += 1) {
       if (global.listOfProducts[i][0] == name) {
@@ -32,7 +31,6 @@ export default function Fruit({data}) {
         }
       }
     }
-    console.tron.log(global.listOfProducts);
   }
 
   return (
@@ -51,7 +49,7 @@ export default function Fruit({data}) {
       </TouchableHighlight>
 
       <TouchableHighlight
-        onPress={() => onPressLess(data.name, count + 1)}
+        onPress={() => onPressLess(data.name)}
         underlayColor="#df312b">
         <Icon name="remove" size={25} color="#DFB42B" />
       </TouchableHighlight>
