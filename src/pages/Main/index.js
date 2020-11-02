@@ -16,6 +16,11 @@ export default class Main extends Component {
     return (
       <Background>
         <QRCodeScanner
+          reactivate
+          showMarker
+          ref={(node) => {
+            this.scanner = node;
+          }}
           onRead={this.onSuccess}
           flashMode={RNCamera.Constants.FlashMode.auto}
           topContent={
