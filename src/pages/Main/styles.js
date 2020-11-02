@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import {RectButton} from 'react-native-gesture-handler';
 
 export const CenterText = styled.Text`
   margin-top: 5px;
