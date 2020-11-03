@@ -5,7 +5,7 @@ export const CenterText = styled.Text`
   font-size: 18px;
   color: #333;
   text-align: center;
-  padding: 32px;
+  padding: 20px;
   flex: 1;
 `;
 export const TextBold = styled.Text`

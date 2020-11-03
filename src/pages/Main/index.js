@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 import {useNavigation} from '@react-navigation/native';
+import {TouchableOpacity} from 'react-native';
 import Background from '../../components/Background';
 import {CenterText, TextBold} from './styles';
 
@@ -16,7 +17,7 @@ export default class Main extends Component {
     return (
       <Background>
         <QRCodeScanner
-          reactivate
+          reactivate={false}
           showMarker
           ref={(node) => {
             this.scanner = node;
@@ -26,13 +27,14 @@ export default class Main extends Component {
           topContent={
             <CenterText>
               Escaneie o <TextBold>QRCODE</TextBold> e faça o seu Pedido.
+              Somente nos <TextBold>Estabelecimentos</TextBold> Cadastrados.
             </CenterText>
           }
           bottomContent={
             <Background>
-              <CenterText>
-                Somente nos <TextBold>Estabelecimentos</TextBold> Cadastrados.
-              </CenterText>
+              <TouchableOpacity onPress={() => this.scanner.reactivate()}>
+                <CenterText>Para pedir novamente, click aqui</CenterText>
+              </TouchableOpacity>
             </Background>
           }
         />

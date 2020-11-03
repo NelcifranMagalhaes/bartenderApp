@@ -25,7 +25,6 @@ export default function Product({route, navigation}) {
     );
     const urlPost = `company/${companyId}/create_demand`;
     const response = await api.post(urlPost, global.listOfProducts);
-
   }
 
   function handleSubmit() {
