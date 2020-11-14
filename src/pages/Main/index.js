@@ -33,7 +33,7 @@ export default class Main extends Component {
           bottomContent={
             <Background>
               <TouchableOpacity onPress={() => this.scanner.reactivate()}>
-                <CenterText>Para pedir novamente, click aqui</CenterText>
+                <CenterText>Para pedir novamente, Clique aqui</CenterText>
               </TouchableOpacity>
             </Background>
           }
